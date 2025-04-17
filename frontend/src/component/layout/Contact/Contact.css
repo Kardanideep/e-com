@@ -1,4 +1,4 @@
-.contactContainer {
+/* .contactContainer {
     height: 100vh;
     width: 100vw;
     max-width: 100%;
@@ -25,4 +25,71 @@
     to {
       transform: translateX(0);
     }
+  } */
+
+  .contactContainer {
+    min-height: 100vh;
+    width: 100%;
+    background-color:rgb(231 231 231);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4vmax 2vmax;
+    box-sizing: border-box;
   }
+  
+  .contactBox {
+    background-color: white;
+    padding: 3vmax;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .contactBox h1 {
+    font-size: 2.5vmax;
+    color: #333;
+    margin-bottom: 1vmax;
+  }
+  
+  .contactBox p {
+    font-size: 1.3vmax;
+    color: #555;
+    margin-bottom: 2vmax;
+  }
+  
+  .mailBtn {
+    text-decoration: none;
+  }
+  
+  .emailButton {
+    font-size: 1.2vmax !important;
+    background-color: #5C6BC0 !important;
+    color: white !important;
+    padding: 1vmax 2vmax !important;
+    border-radius: 8px !important;
+    transition: background-color 0.3s ease !important;
+  }
+  
+  .emailButton:hover {
+    background-color: #7f7f7f !important;
+  }
+  
+  @media screen and (max-width: 600px) {
+
+    .contactBox h1 {
+      font-size: 5vmax;
+    }
+  
+    .contactBox p {
+      font-size: 2.2vmax;
+    }
+  
+    .emailButton {
+      font-size: 1.6vmax !important;
+      padding: 1.5vmax 2vmax !important;
+    }
+  }
+  

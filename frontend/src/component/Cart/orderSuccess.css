@@ -10,7 +10,7 @@
   }
   .orderSuccess > svg {
     font-size: 7vmax;
-    color: tomato;
+    color: #5C6BC0;
   }
   .orderSuccess > p {
     font-size: 2vmax;
@@ -24,6 +24,7 @@
     font: 400 1vmax "Roboto";
     text-decoration: none;
     margin: 2vmax;
+    border-radius: 20px;
   }
   
   @media screen and (max-width: 600px) {

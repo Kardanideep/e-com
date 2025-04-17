@@ -143,6 +143,7 @@ const Payment = () => {
             className="paymentFormBtn"
           />
         </form>
+        <p className="card">4000 0035 6000 0008 -  Use this test card to verify the payment process</p>
       </div>
     </Fragment>
   );

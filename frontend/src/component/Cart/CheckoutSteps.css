@@ -7,7 +7,16 @@
     background-color: rgba(0, 0, 0, 0.349);
   }
   
+  .h2{
+    background-color: rgb(232, 232, 232);
+  }
+
+  .MuiStepper-horizontal {
+    background-color: rgb(232, 232, 232) !important;
+}
+  
   .MuiStepConnector-active,
   .MuiStepConnector-completed {
-    background-color: tomato;
+    background-color: #3f51b5;
   }
+

@@ -1,4 +1,4 @@
-.myOrdersPage {
+/* .myOrdersPage {
     width: 100vw;
     max-width: 100%;
     box-sizing: border-box;
@@ -51,11 +51,11 @@
   }
   
   .myOrdersTable a:hover {
-    color: tomato;
+    color: rgb(55, 55, 55);
   }
   
   .MuiDataGrid-columnHeader {
-    background-color: tomato;
+    background-color: #5C6BC0;
     padding: 1vmax !important;
   }
   
@@ -90,4 +90,91 @@
     .MuiDataGrid-columnHeader div {
       font: 500 5vw "Roboto" !important;
     }
+  } */
+
+  .ordersContainer {
+    padding: 2vmax;
+    background-color: rgb(231 231 231);
+    min-height: 100vh;
   }
+  
+  .ordersHeading {
+    text-align: center;
+    margin-bottom: 2vmax;
+    font-size: 2vmax;
+    color: #333;
+  }
+  
+  .ordersList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vmax;
+    justify-content: center;
+  }
+  
+  .orderCard {
+    background-color: #fff;
+    padding: 1.5vmax;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+  }
+  
+  .orderCard p {
+    margin: 0.5vmax 0;
+    font-size: 1vmax;
+    color: #555;
+  }
+  
+  .greenColor {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .redColor {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .viewDetailsBtn {
+    display: inline-block;
+    margin-top: 1vmax;
+    padding: 0.5vmax 1vmax;
+    background-color: #1976d2;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1vmax;
+    transition: background-color 0.3s;
+  }
+  
+  .viewDetailsBtn:hover {
+    background-color: #1565c0;
+  }
+  
+  .noOrders {
+    text-align: center;
+    font-size: 1.5vmax;
+    color: #777;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .ordersList {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .orderCard {
+      width: 90%;
+    }
+  
+    .ordersHeading {
+      font-size: 3vmax;
+    }
+  
+    .orderCard p,
+    .viewDetailsBtn {
+      font-size: 3.5vw;
+    }
+  }
+  

@@ -1,6 +1,6 @@
 .updateProfileContainer {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     max-width: 100%;
     display: flex;
     justify-content: center;
@@ -17,6 +17,8 @@
     height: 70vh;
     box-sizing: border-box;
     overflow: hidden;
+    border-radius: 20px;
+    border: 2px solid rgb(127, 127, 127);
   }
   
   .updateProfileHeading {
@@ -53,7 +55,7 @@
     box-sizing: border-box;
     border: 1px solid rgba(0, 0, 0, 0.267);
     border-radius: 4px;
-    font: 300 0.9vmax cursive;
+    font: 300 0.9vmax;
     outline: none;
   }
   
@@ -81,7 +83,7 @@
     height: 5vh;
     border: none;
     margin: 0%;
-    font: 400 0.8vmax cursive;
+    font: 400 0.8vmax;
     transition: all 0.5s;
     padding: 0 1vmax;
     color: rgba(0, 0, 0, 0.623);
@@ -94,20 +96,20 @@
   
   .updateProfileBtn {
     border: none;
-    background-color: tomato;
+    background-color: #3f51b5;
     color: white;
     font: 300 0.9vmax "Roboto";
     width: 100%;
     padding: 0.8vmax;
     cursor: pointer;
     transition: all 0.5s;
-    border-radius: 4px;
+    border-radius: 10px;
     outline: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
   }
   
   .updateProfileBtn:hover {
-    background-color: rgb(179, 66, 46);
+    background-color: rgb(81, 81, 80);
   }
   
   @media screen and (max-width: 600px) {
@@ -115,8 +117,9 @@
       background-color: white;
     }
     .updateProfileBox {
-      width: 100vw;
-      height: 95vh;
+      width: 80vw;
+      height: 60vh;
+      padding-top: 10px;
     }
   
     .updateProfileForm {
@@ -125,7 +128,8 @@
   
     .updateProfileForm > div > input {
       padding: 2.5vmax 5vmax;
-      font: 300 1.7vmax cursive;
+      margin-bottom: 10px;
+      font: 300 1.7vmax;
     }
   
     .updateProfileForm > div > svg {
@@ -139,11 +143,12 @@
   
     #updateProfileImage > input::file-selector-button {
       height: 7vh;
-      font: 400 1.8vmax cursive;
+      font: 400 1.8vmax;
     }
   
     .updateProfileBtn {
       font: 300 1.9vmax "Roboto";
       padding: 1.8vmax;
+      margin-top: 20px;
     }
   }

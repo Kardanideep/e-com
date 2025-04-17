@@ -8,15 +8,15 @@ import "./CheckoutSteps.css";
 const CheckoutSteps = ({ activeStep }) => {
   const steps = [
     {
-      label: <Typography>Shipping Details</Typography>,
+      label: <h2 className="h2">Shipping Details</h2>,
       icon: <LocalShippingIcon />,
     },
     {
-      label: <Typography>Confirm Order</Typography>,
+      label: <h2 className="h2">Confirm Order</h2>,
       icon: <LibraryAddCheckIcon />,
     },
     {
-      label: <Typography>Payment</Typography>,
+      label: <h2 className="h2">Payment</h2>,
       icon: <AccountBalanceIcon />,
     },
   ];
@@ -36,7 +36,7 @@ const CheckoutSteps = ({ activeStep }) => {
           >
             <StepLabel
               style={{
-                color: activeStep >= index ? "tomato" : "rgba(0, 0, 0, 0.649)",
+                color: activeStep >= index ? "#3f51b5" : "rgba(0, 0, 0, 0.649)",
               }}
               icon={item.icon}
             >

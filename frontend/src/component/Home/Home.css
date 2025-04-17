@@ -1,21 +1,20 @@
 .banner {
-    background-image: url("../../images/cover.jfif");
+    background-image: url("../../images/cover.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: white;
+    background-color: rgb(233, 228, 228);
     height: 69.9vmin;
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: rgb(233, 228, 228);
   }
   
   .banner > h1 {
     margin: 5vmax;
-  
     font: 600 2.5vmax "Roboto";
   }
   
@@ -43,7 +42,7 @@
     content: "";
     width: 100vw;
     height: 70vmin;
-    background-color: #ffffff;
+    background-color: rgb(231 231 231);
     position: absolute;
     top: 0%;
     left: 0;
@@ -71,9 +70,9 @@
     max-width: 100%;
   }
   
-  .productCard {
+  /* .productCard {
     width: 17vmax;
-    height: 360px;
+    height: 430px;
     display: flex;
     flex-direction: column;
     text-decoration: none;
@@ -82,13 +81,44 @@
     transition: all 0.5s;
     padding-bottom: 0.5vmax;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  } */
+
+  .productCard {
+    width: 20vmax;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    color: #303030;
+    margin: 1.3vmax;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding-bottom: 0.5vmax;
+    border-radius: 1rem;
+    background: #fdfcfb;
+    overflow: hidden;
+    /* border: 2px solid rgb(153, 153, 153); */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+                0 8px 20px rgba(0, 0, 0, 0.1);
   }
+  
+  .productCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15),
+                0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+  
   .productCard > img{
     height: 280px;
+    max-height: 280px;
+    border-radius: 1rem;
   }
   
   .productCard > img {
-    width: 17vmax;
+    width: 18vmax;
   }
   
   .productCard > div {
@@ -101,34 +131,54 @@
   
   .productCardSpan {
     margin: 0.5vmax;
-    font: 300 0.7vmax "Roboto";
+    font: 400 10vmax "Roboto";
   }
   
   .productCard > p {
+    text-align: center;
     font-family: "Roboto";
-    font-size: 1.2vmax;
-    margin: 1vmax 0.5vmax;
+    font-size: 1.5vmax;
+    margin: 1.5vmax 0.5vmax;
     margin-bottom: 0;
+    color: #333333;
+    padding-bottom: 10px;
+    padding-top: 8px;
   }
   
   .productCard > span {
     margin: 0.5vmax;
-    color: rgb(7, 7, 7);
+    color: #5C6BC0;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    font-size: 1.3vmax;
+    font-size: 1.5vmax;
   }
   
-  .productCard:hover {
+  /* .productCard:hover {
     box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
   
     transform: translateY(-1vmax);
-  }
+  } */
   
   @media screen and (max-width: 600px) {
    
+    .productCard {
+      width: 18vmax !important;
+      height: 280px !important;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid rgb(153, 153, 153);
+    }
+    .productCard > img{
+      height: 170px !important;
+      /* max-height: 215px !important; */
+    }
+    
+    .productCard > img {
+      width: 16vmax !important
+      ;
+    }
 
     .productCard > p {
-      font-size: 1.7vmax;
+      font-size: 2.2vmax;
     }
   
     .productCard > div {
@@ -137,11 +187,149 @@
     }
   
     .productCard > span {
-      font-size: 1.5vmax;
+      font-size: 2vmax;
     }
   
     .productCard > div > span {
       margin: 0 0.5vmax;
-      font: 300 1vmax "Roboto";
+      font: 300 1.2vmax "Roboto";
+    }
+
+    .products{
+      padding: 0;
     }
   }
+
+  @media screen and (min-width: 600px) and (max-width: 1165px) {
+    .productCard {
+      width: 25vmax !important;
+      height: 400px !important;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .productCard > img {
+      height: 270px !important;
+      max-height: 270px !important;
+      width: 23vmax !important;
+    }
+  
+    .productCard > p {
+      font-size: 1.9vmax;
+    }
+  
+    .productCard > div {
+      margin: 0vmax;
+      display: block;
+    }
+  
+    .productCard > span {
+      font-size: 2vmax;
+    }
+  
+    .productCard > div > span {
+      margin: 0.3vmax 0.5vmax;
+      font: 400 1.5vmax "Roboto";
+    }
+  }
+  
+  .priceRangeBox {
+    margin-bottom: 1.5rem;
+  }
+  
+  .priceRangeList {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .priceRangeItem {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+  }
+  
+  .priceRangeItem:hover {
+    background-color: #ececec;
+  }
+  
+  .priceRangeItem.active {
+    background-color: #1976d2;
+    color: white;
+    border-color: #1976d2;
+  }
+
+  
+  .ratingsBox {
+    margin-bottom: 1.5rem;
+  }
+  
+  .ratingsList {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .ratingItem {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+  }
+  
+  .ratingItem:hover {
+    background-color: #ececec;
+  }
+  
+  .ratingItem.active {
+    background-color: #1976d2;
+    color: white;
+    border-color: #1976d2;
+  }
+  
+  .categoryBoxWrapper {
+    margin-bottom: 1.5rem;
+  }
+  
+  .categoryBox {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .categoryItem {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+  }
+  
+  .categoryItem:hover {
+    background-color: #ececec;
+  }
+  
+  .categoryItem.active {
+    background-color: #1976d2;
+    color: white;
+    border-color: #1976d2;
+  }
+  

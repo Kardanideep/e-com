@@ -3,9 +3,11 @@
     background-color: white;
     display: grid;
     grid-template-columns: 6fr 3fr;
+    margin: 30px;
+    border-radius: 20px;
   }
-  
-  .confirmOrderPage > div:last-child {
+   
+  .confirmOrderPage  {
     border-left: 1px solid rgba(0, 0, 0, 0.247);
   }
   
@@ -16,6 +18,8 @@
   
   .confirmshippingArea > p {
     font: 400 1.8vmax "Roboto";
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgb(149, 149, 149);
   }
   
   .confirmshippingAreaBox,
@@ -29,17 +33,20 @@
   }
   
   .confirmshippingAreaBox > div > p {
-    font: 400 1vmax "Roboto";
+    font: 400 1.3vmax "Roboto";
     color: black;
   }
   .confirmshippingAreaBox > div > span {
     margin: 0 1vmax;
-    font: 100 1vmax "Roboto";
+    font: 100 1.3vmax "Roboto";
     color: #575757;
   }
   
   .confirmCartItems > p {
     font: 400 1.8vmax "Roboto";
+    padding-bottom: 10px;
+    background-color: black;
+    border-bottom: 2px solid rgb(149, 149, 149);
   }
   
   .confirmCartItems {
@@ -54,7 +61,7 @@
   
   .confirmCartItemsContainer > div {
     display: flex;
-    font: 400 1vmax "Roboto";
+    font: 400 1.3vmax "Roboto";
     align-items: center;
     justify-content: space-between;
     margin: 2vmax 0;
@@ -66,13 +73,13 @@
   
   .confirmCartItemsContainer > div > a {
     color: #575757;
-    margin: 0 2vmax;
-    width: 60%;
+    margin: 0 1vmax;
+    width: 30%;
     text-decoration: none;
   }
   
   .confirmCartItemsContainer > div > span {
-    font: 100 1vmax "Roboto";
+    font: 100 1.3vmax "Roboto";
     color: #5e5e5e;
   }
   
@@ -92,7 +99,7 @@
   
   .orderSummary > div > div {
     display: flex;
-    font: 300 1vmax "Roboto";
+    font: 300 1.3vmax "Roboto";
     justify-content: space-between;
     margin: 2vmax 0;
   }
@@ -102,26 +109,28 @@
   
   .orderSummaryTotal {
     display: flex;
-    font: 300 1vmax "Roboto";
+    font: 300 1.3vmax "Roboto";
     justify-content: space-between;
     border-top: 1px solid rgba(0, 0, 0, 0.363);
     padding: 2vmax 0;
   }
   
   .orderSummary > button {
-    background-color: tomato;
+    background-color: #5C6BC0;
     color: white;
     width: 100%;
     padding: 1vmax;
+    border-radius: 20px;
     border: none;
     margin: auto;
+    margin-top: 20px;
     cursor: pointer;
     transition: 0.5s;
     font: 400 1vmax "Roboto";
   }
   
   .orderSummary > button:hover {
-    background-color: rgb(192, 71, 50);
+    background-color: rgb(88, 88, 88);
   }
   
   @media screen and (max-width: 600px) {
@@ -169,7 +178,7 @@
     }
   
     .confirmCartItemsContainer > div > a {
-      margin: 0;
+      margin: 0 15px;
       width: 30%;
     }
   
@@ -201,3 +210,5 @@
       font: 400 4vw "Roboto";
     }
   }
+
+  

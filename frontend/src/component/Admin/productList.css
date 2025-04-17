@@ -1,4 +1,4 @@
-.productListContainer {
+/* .productListContainer {
     width: 100%;
     box-sizing: border-box;
     background-color: rgb(255, 255, 255);
@@ -51,4 +51,121 @@
     .productListTable div {
       font: 300 4vw "Roboto";
     }
+  } */
+
+  /* Base styles */
+.productListContainera {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  background-color: #f4f4f4;
+
+}
+
+#productListHeadinga {
+  border-bottom: 2px double #5e5e5e;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #333;
+}
+
+
+.productGrida {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.2rem;
+  width: 100%;
+}
+
+
+.productCarda {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertical centering */
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  height: 500px !important;
+  /* width: 250px !important; */
+  margin: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+
+
+.productCarda:hover {
+  transform: scale(1.05);
+}
+
+.productCardHeadera {
+  background-color: #3f51b5;
+  padding: 1rem;
+  color: white;
+  /* margin-top: 10px; */
+  border-radius: 5px;
+  width: 80%;
+}
+
+.productCardBodya {
+  padding: 1rem;
+}
+.productCardBodya p {
+  padding: 1rem;
+}
+
+.productCardFootera {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  background-color: #cecece;
+  border-radius: 10px;
+  width: 80%;
+  align-items: center;
+}
+
+
+.productCardFootera Button {
+  border-radius: 8px;
+  
+}
+
+
+@media (max-width: 600px) {
+
+  .productCardHeadera {
+   width: 70%;
   }
+
+  .productCardFootera {
+    padding: 0rem;
+    width: 90%;
+  }
+
+  .productCarda {
+    height: 250px !important;
+    width: 150px !important;
+  }
+
+  .des{
+    display: none;
+  }
+
+  .productCardBodya {
+    padding: 1rem;
+  }
+  .productCardBodya p {
+    padding: 0rem;
+    margin-bottom: 10px;
+  }
+  .productGrida {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  #productListHeadinga {
+    font-size: 2rem;
+  }
+}

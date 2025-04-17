@@ -43,10 +43,10 @@ const Cart = () => {
         <div className="emptyCart">
           <RemoveShoppingCartIcon />
 
-          <Typography>No Product in Your Cart</Typography>
+          <h1 className="text">No Product in Your Cart</h1>
           <Link to="/products">View Products</Link>
         </div>
-      ) : (
+      ) : (  
         <Fragment>
           <div className="cartPage">
             <div className="cartHeader">

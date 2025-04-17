@@ -8,9 +8,11 @@
     scroll-behavior: smooth;
   }
   
-  /* body {
-    cursor: url("./images/cursor.png"), auto;
-  } */
+  body {
+    /* cursor: url("./images/cursor.png"), auto; */
+    /* background-color: rgb(233, 228, 228); */
+    background-color: rgb(232, 232, 232) !important ;
+  }
   
   /* Chrome, Safari, Edge, Opera */
   input::-webkit-outer-spin-button,

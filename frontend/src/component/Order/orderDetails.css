@@ -1,11 +1,11 @@
-.orderDetailsPage {
+/* .orderDetailsPage {
     background-color: white;
   }
   
   .orderDetailsContainer > h1 {
     font: 300 3vmax "Roboto";
     margin: 4vmax 0;
-    color: tomato;
+    color: #3f51b5;
   }
   
   .orderDetailsContainer {
@@ -39,6 +39,7 @@
   
   .orderDetailsCartItems > p {
     font: 400 1.8vmax "Roboto";
+    
   }
   
   .orderDetailsCartItems {
@@ -73,7 +74,7 @@
     .orderDetailsContainer > p {
       font: 400 6vw "Roboto";
     }
-  
+   
     .orderDetailsContainerBox > div {
       margin: 6vw 0;
     }
@@ -106,4 +107,131 @@
     .orderDetailsCartItemsContainer > div > span {
       font: 100 4vw "Roboto";
     }
+  } */
+
+  /* orderDetails.css */
+
+.orderDetailsPage {
+  background-color: #ffffff;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 60px;
+  width: 80%;
+  border-radius: 20px;
+}
+
+.orderDetailsTitle {
+  font-size: 2rem !important;
+  margin-bottom: 1rem !important;
+  color: #3f51b5;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #333333;
+  border-bottom: 2px solid #3f51b5;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.orderDetailsContainerBox {
+  margin-bottom: 1.5rem;
+}
+
+.orderDetailsContainerBox > div {
+  display: flex;
+  margin: 0.5rem 0;
+}
+
+.orderDetailsContainerBox > div > p {
+  font-weight: 500;
+  width: 150px;
+  color: #555555;
+}
+
+.orderDetailsContainerBox > div > span {
+  color: #777777;
+}
+
+.orderDetailsCartItems {
+  margin-top: 2rem;
+  border-top: 1px solid #dddddd;
+  padding-top: 1rem;
+}
+
+.orderDetailsCartItemsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cartItem img {
+  width: 60px;
+  height: 60px;
+  margin-top: 10px;
+  object-fit: cover;
+}
+
+.cartItem a {
+  flex: 1;
+  text-decoration: none;
+  color: #3f51b5;
+  font-weight: 500;
+}
+
+.cartItem span {
+  color: #333333;
+}
+
+.greenColor {
+  color: green;
+  font-weight: bold;
+}
+
+.redColor {
+  color: red;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .orderDetailsPage {
+    padding: 1rem;
   }
+
+  .orderDetailsTitle {
+    font-size: 1rem !important;
+  }
+
+  .sectionTitle {
+    font-size: 1.25rem;
+  }
+
+  .orderDetailsContainerBox > div > p,
+  .orderDetailsContainerBox > div > span {
+    font-size: 0.9rem;
+  }
+
+  .cartItem img {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+  }
+
+  .cartItem a {
+    font-size: 0.9rem;
+  }
+
+  .cartItem span {
+    font-size: 0.9rem;
+  }
+}

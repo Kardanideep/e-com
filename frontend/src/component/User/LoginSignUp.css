@@ -1,11 +1,11 @@
 .LoginSignUpContainer {
     width: 100vw;
     height: 100vh;
-    max-width: 100%;
+    max-width: 100%; 
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(231, 231, 231);
+    background-color: #f6f6f6;
     position: fixed;
     top: 0%;
     left: 0;
@@ -17,6 +17,9 @@
     height: 70vh;
     box-sizing: border-box;
     overflow: hidden;
+    border-radius: 20px;
+    padding-top: 20px;
+    border: 2px solid rgb(210, 210, 210);
   }
   .login_signUp_toggle {
     display: flex;
@@ -32,11 +35,11 @@
     width: 100%;
   }
   .login_signUp_toggle > p:hover {
-    color: tomato;
+    color: rgb(76, 74, 73);
   }
   
   .LoginSignUpBox > div > button {
-    background-color: tomato;
+    background-color: #3f51b5;
     height: 3px;
     width: 50%;
     border: none;
@@ -73,7 +76,7 @@
     box-sizing: border-box;
     border: 1px solid rgba(0, 0, 0, 0.267);
     border-radius: 4px;
-    font: 300 0.9vmax cursive;
+    font: 300 0.9vmax;
     outline: none;
   }
   
@@ -113,7 +116,7 @@
     height: 5vh;
     border: none;
     margin: 0%;
-    font: 400 0.8vmax cursive;
+    font: 400 0.8vmax;
     transition: all 0.5s;
     padding: 0 1vmax;
     color: rgba(0, 0, 0, 0.623);
@@ -127,7 +130,7 @@
   .loginBtn,
   .signUpBtn {
     border: none;
-    background-color: tomato;
+    background-color: #3f51b5;
     color: white;
     font: 300 0.9vmax "Roboto";
     width: 100%;
@@ -141,7 +144,7 @@
   
   .loginBtn:hover,
   .signUpBtn:hover {
-    background-color: rgb(179, 66, 46);
+    background-color: rgb(130, 130, 130);
   }
   
   .shiftToLeft {
@@ -161,11 +164,13 @@
   
   @media screen and (max-width: 600px) {
     .LoginSignUpContainer {
-      background-color: white;
+      background-color: #f6f6f6;
+    
     }
     .LoginSignUpBox {
-      width: 100vw;
-      height: 95vh;
+      width: 80vw;
+      height: 70vh;
+      border: 2px solid rgb(210, 210, 210);
     }
     .login_signUp_toggle {
       height: 5vmax;
@@ -182,7 +187,8 @@
     .loginForm > div > input,
     .signUpForm > div > input {
       padding: 2.5vmax 5vmax;
-      font: 300 1.7vmax cursive;
+      margin: 1vmax 0;
+      font: 300 1.7vmax;
     }
   
     .loginForm > div > svg,
@@ -201,12 +207,13 @@
   
     #registerImage > input::file-selector-button {
       height: 7vh;
-      font: 400 1.8vmax cursive;
+      font: 400 1.8vmax;
     }
   
     .loginBtn,
     .signUpBtn {
       font: 300 1.9vmax "Roboto";
       padding: 1.8vmax;
+      margin-top: 20px;
     }
   }

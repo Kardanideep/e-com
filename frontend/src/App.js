@@ -94,7 +94,7 @@ function App() {
       <Route exact path="/password/reset/:token" Component={ResetPasswrd} />
 
       <Route exact path="/cart" Component={Cart} />
-
++
       <Route exact path="/contact" Component={Contact} />
 
       <Route exact path="/about" Component={About} />
