@@ -499,6 +499,12 @@
   .detailsBlock-3-1 > button:last-child:hover {
     background-color: #606060;
   }
+
+  .true{
+    background-color: grey !important;
+    cursor: not-allowed;
+  }
+
   
   .detailsBlock-3 p {
     font-size: 1rem;
@@ -551,21 +557,48 @@
     
   }
   
-  .reviews {
+  /* .reviews {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
     justify-content: center;
+  } */
+  .reviews {
+    display: flex;
+    flex-direction: row;      /* Arrange items side by side */
+    gap: 1.5rem;
+    overflow-x: auto;         /* Enable horizontal scrolling */
+    padding: 1rem;
+    scroll-behavior: smooth;  /* Optional: smooth scrolling */
   }
   
   .reviewCard {
+    flex: 0 0 auto;           /* Prevent cards from shrinking or growing */
+    background-color: #fff;
+    padding: 1rem;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .reviews::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .reviews::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  
+  /* .reviewCard {
     background-color: #fff;
     padding: 2rem;
     width: 300px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     text-align: center;
-  }
+  } */
   
   .reviewCard img {
     width: 60px;
@@ -612,7 +645,7 @@
     }
   
     .reviewCard {
-      width: 100%;
+      width: 50%;
     }
 
     .Heading{

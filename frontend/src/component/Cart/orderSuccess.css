@@ -2,15 +2,22 @@
     margin: auto;
     text-align: center;
     padding: 10vmax;
-    height: 50vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+
+  .orderSuccess .success-gif {
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
   .orderSuccess > svg {
     font-size: 7vmax;
-    color: #5C6BC0;
+    color: #0ea650;
   }
   .orderSuccess > p {
     font-size: 2vmax;
@@ -27,7 +34,15 @@
     border-radius: 20px;
   }
   
+  .msg{
+    font-size: 20px !important;
+  }
   @media screen and (max-width: 600px) {
+    .msg{
+      font-size: 20px !important;
+      width: 90%;
+    }
+
     .orderSuccess > a {
       padding: 3vw 6vw;
       font: 400 4vw "Roboto";

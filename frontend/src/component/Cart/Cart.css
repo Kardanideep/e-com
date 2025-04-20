@@ -7,26 +7,44 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgb(119, 119, 122);
+    margin: 200px;
+    border-radius: 20px;
   }
+
+  .emptyCart .cart-image {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+  }
+
   .emptyCart > svg {
     font-size: 5vmax;
     color: #3f51b5;
   }
   .emptyCart > p {
     font-size: 1.8vmax;
-    background-color: #f6f6f6 !important;
     margin: 2vmax 0;
+    color: white;
   }
   .emptyCart > a {
-    background-color: rgb(51, 51, 51);
+    background-color: #3f51b5;
     color: #f6f6f6;
     border: none;
     padding: 1vmax 3vmax;
     cursor: pointer;
     font: 400 1vmax "Roboto";
     text-decoration: none;
+    border-radius: 20px;margin-top: 20px;
   }
-  
+
+  .emptyCart > a:hover {
+    background-color: #8791ce;
+  }
+
+
   .cartPage {
     /* padding: 5vmax; */
     min-height: 100vh;
@@ -137,8 +155,17 @@
   }
   
   @media screen and (max-width: 600px) {
+    .emptyCart{
+      margin: 100px 20px 0px 20px;
+    }
     .emptyCart > p {
       font-size: 2.5vmax;
+      width: 200px;
+    }
+
+    .emptyCart .cart-image {
+      max-width: 600px;
+      width: 300px;
     }
 
     .emptyCart > a {

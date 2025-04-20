@@ -15,10 +15,10 @@ import AccountTreeIcon from "@material-ui/icons/AccountTree";
 import { Button } from "@material-ui/core";
 import { UPDATE_ORDER_RESET } from "../../constants/orderConstants";
 import "./processOrder.css";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const ProcessOrder = () => {
-  const history = useNavigate();
+  // const history = useNavigate();
   const {id} = useParams();
 
   const { order, error, loading } = useSelector((state) => state.orderDetails);
@@ -61,7 +61,7 @@ const ProcessOrder = () => {
       <MetaData title="Process Order" />
       <div className="dashboard">
         <SideBar />
-        <div className="newProductContainer">
+        <div className="newProductContainer1">
           {loading ? (
             <Loader />
           ) : (
@@ -134,7 +134,7 @@ const ProcessOrder = () => {
                   </div>
                 </div>
                 <div className="confirmCartItems">
-                  <Typography>Your Cart Items:</Typography>
+                  <Typography>Cart Items:</Typography>
                   <div className="confirmCartItemsContainer">
                     {order.orderItems &&
                       order.orderItems.map((item) => (

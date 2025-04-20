@@ -3,8 +3,6 @@ import "./Cart.css";
 import CartItemCard from "./CartItemCard";
 import { useSelector, useDispatch } from "react-redux";
 import { addItemsToCart, removeItemsFromCart } from "../../actions/cartAction";
-import { Typography } from "@material-ui/core";
-import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
@@ -41,10 +39,14 @@ const Cart = () => {
     <Fragment>
       {cartItems.length === 0 ? (
         <div className="emptyCart">
-          <RemoveShoppingCartIcon />
+          {/* <RemoveShoppingCartIcon />
 
-          <h1 className="text">No Product in Your Cart</h1>
-          <Link to="/products">View Products</Link>
+          <p className="text">No Product in Your Cart</p>
+          <Link to="/products">View Products</Link> */}
+          <img src="/emptycart.png" alt="Empty Cart" className="cart-image" />
+  
+  <p className="text">No Product in Your Cart</p>
+  <Link to="/products">View Products</Link>
         </div>
       ) : (  
         <Fragment>

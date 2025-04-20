@@ -11,7 +11,6 @@ import { useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { logout } from "../../../actions/userAction";
 import { useDispatch, useSelector } from "react-redux";
-import profile from "../../../images/Profile.png"
 
 const UserOptions = ({ user }) => {
   const { cartItems } = useSelector((state) => state.cart);

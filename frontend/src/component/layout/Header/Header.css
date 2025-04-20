@@ -1,35 +1,37 @@
 .speedDial {
-    position: fixed;
-    right: 3vmax;
-    top: 3vmax;
-  }
-  
-  .speedDialIcon {
-    width: 56px;
-    height: 56px;
-    border-radius: 100%;
-  }
-   
-  .logoReactNavbar {
-    width: 160px !important;
+  position: fixed;
+  right: 3vmax;
+  top: 3vmax;
+}
+
+.speedDialIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
+}
+ 
+.logoReactNavbar {
+  width: 160px !important;
 }
 
 .linksReactNavbar {
-  font-size: 2.3vmax !important;
+font-size: 2.3vmax !important;
 }
 
-  /* Header.css */
+
+/* Header.css */
 
 @media (max-width: 768px) {
-  .reactNavbar__logo {
-    display: none !important;
-  }
+.reactNavbar__logo {
+  display: none !important;
+}
 
-  .logoReactNavbar {
-    width: 100% !important;
+.logoReactNavbar {
+  width: 100% !important;
 }
 
 .linksReactNavbar {
-  font-size: 2.3vmax !important;
+font-size: 2.3vmax !important;
 }
 }
+

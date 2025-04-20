@@ -3,6 +3,16 @@
     padding: 3vmax;
     background-color: white;
   }
+
+  .newProductContainer1{
+      width: 100%;
+      box-sizing: border-box;
+      background-color: rgb(231 231 231);
+      border-left: 1px solid rgba(0, 0, 0, 0.158);
+      display: flex;
+      flex-direction: column;
+  }
+  
   
   .updateOrderForm > div {
     display: flex;

@@ -12,6 +12,7 @@
     /* cursor: url("./images/cursor.png"), auto; */
     /* background-color: rgb(233, 228, 228); */
     background-color: rgb(232, 232, 232) !important ;
+    min-height: 100vh;
   }
   
   /* Chrome, Safari, Edge, Opera */

@@ -23,5 +23,5 @@ root.render(
       <App />
     </AlertProvider>
   </Provider>,
-  document.getElementById("root")
+  // document.getElementById("root")
 );

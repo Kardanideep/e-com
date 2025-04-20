@@ -21,13 +21,14 @@ import {
 } from "@material-ui/core";
 import { Rating } from "@material-ui/lab";
 import { NEW_REVIEW_RESET } from "../../constants/productConstants";
-import { useParams } from "react-router-dom"; 
-
+import { useParams } from "react-router-dom";
 
 const ProductDetails = ({ match }) => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const alert = useAlert();
+
+  const [selectedImg, setSelectedImg] = useState(null);
 
   const { product, loading, error } = useSelector(
     (state) => state.productDetails
@@ -84,7 +85,6 @@ const ProductDetails = ({ match }) => {
     setOpen(false);
   };
 
-
   useEffect(() => {
     if (error) {
       alert.error(error);
@@ -100,7 +100,7 @@ const ProductDetails = ({ match }) => {
       dispatch({ type: NEW_REVIEW_RESET });
     }
     dispatch(getProductDetails(id));
-  }, [dispatch, id, error, alert, reviewError,success]);
+  }, [dispatch, id, error, alert, reviewError, success]);
 
   return (
     <Fragment>
@@ -112,7 +112,7 @@ const ProductDetails = ({ match }) => {
           <h3 className="Heading">{product.name} Details</h3>
           <div className="ProductDetails">
             <div>
-              <Carousel className="img">
+              {/* <Carousel className="img">
                 {product.images &&
                   product.images.map((item, i) => (
                     <img
@@ -122,7 +122,50 @@ const ProductDetails = ({ match }) => {
                       alt={`${i} Slide`}
                     />
                   ))}
+              </Carousel> */}
+              <Carousel className="img">
+                {product.images &&
+                  product.images.map((item, i) => (
+                    <img
+                      className="CarouselImage"
+                      key={i}
+                      src={item.url}
+                      alt={`${i} Slide`}
+                      onClick={() => setSelectedImg(item.url)}
+                      style={{ cursor: "pointer" }}
+                    />
+                  ))}
               </Carousel>
+
+              {selectedImg && (
+                <div
+                  className="overlay"
+                  onClick={() => setSelectedImg(null)}
+                  style={{
+                    position: "fixed",
+                    top: 0,
+                    left: 0,
+                    width: "100vw",
+                    height: "100vh",
+                    backgroundColor: "rgba(0,0,0,0.8)",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    zIndex: 1000,
+                    cursor: "zoom-out",
+                  }}
+                >
+                  <img
+                    src={selectedImg}
+                    alt="Zoomed"
+                    style={{
+                      maxWidth: "90%",
+                      maxHeight: "90%",
+                      borderRadius: "8px",
+                    }}
+                  />
+                </div>
+              )}
             </div>
 
             <div>
@@ -148,6 +191,7 @@ const ProductDetails = ({ match }) => {
                   <button
                     disabled={product.stock < 1 ? true : false}
                     onClick={addToCartHandler}
+                    className={`${product.stock < 1 ? "true" : "false"}`}
                   >
                     Add to Cart
                   </button>
@@ -168,12 +212,12 @@ const ProductDetails = ({ match }) => {
               <button onClick={submitReviewToggle} className="submitReview">
                 Submit Review
               </button>
-            </div> 
+            </div>
           </div>
 
           <h3 className="reviewsHeading">REVIEWS</h3>
 
-         <Dialog
+          <Dialog
             aria-labelledby="simple-dialog-title"
             open={open}
             onClose={submitReviewToggle}
@@ -184,7 +228,7 @@ const ProductDetails = ({ match }) => {
                 onChange={(e) => setRating(e.target.value)}
                 value={rating}
                 size="large"
-              /> 
+              />
 
               <textarea
                 className="submitDialogTextArea"
@@ -209,14 +253,14 @@ const ProductDetails = ({ match }) => {
               {product.reviews &&
                 product.reviews.map((review) => (
                   <ReviewCard key={review._id} review={review} />
-               ))} 
-           </div>
+                ))}
+            </div>
           ) : (
             <p className="noReviews">No Reviews Yet</p>
-          )} 
+          )}
         </Fragment>
       )}
-   </Fragment>
+    </Fragment>
   );
 };
 

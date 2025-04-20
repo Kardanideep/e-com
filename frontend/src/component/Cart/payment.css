@@ -95,6 +95,10 @@
     .paymentForm > div > svg {
       font-size: 6vw;
     }
+
+    .card{
+      width: 80%;
+    }
   
     .paymentFormBtn {
       font: 300 4vw "Roboto";

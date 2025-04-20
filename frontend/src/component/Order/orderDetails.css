@@ -114,12 +114,13 @@
 .orderDetailsPage {
   background-color: #ffffff;
   padding: 2rem;
-  max-width: 1200px;
+  max-width: 1200px; 
   margin: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-top: 60px;
   width: 80%;
   border-radius: 20px;
+  /* height:10px; */
 }
 
 .orderDetailsTitle {

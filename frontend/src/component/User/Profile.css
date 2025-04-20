@@ -242,8 +242,8 @@
   } */
 
   .profileContainer {
-    max-width: 900px;
-    margin: 2rem auto;
+    max-width: 900px;;
+    margin: 15rem auto;
     padding: 2rem;
     display: flex;
     flex-wrap: wrap;
@@ -254,7 +254,7 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     font-family: "Segoe UI", sans-serif;
   }
-  
+
   .border1 {
     flex: 1 1 250px;
     min-width: 260px;
@@ -275,14 +275,14 @@
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 3rem !important;
-    margin-right: 70px ;
+    margin-right: 80px ;
     border: 2px solid #3f51b5;
   }
   
   .border1 a {
     display: inline-block;
     margin-top: 7rem !important;
-    margin-left: -180px;
+    margin-left: -200px;
     padding: 0.5rem 1.2rem;
     background-color: #3f51b5;
     color: white;
@@ -329,6 +329,7 @@
     background-color: #f50057;
     color: white;
     border-radius: 6px;
+    padding-left: -20px;
     transition: background-color 0.3s ease;
   }
   

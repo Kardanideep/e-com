@@ -19,7 +19,8 @@ const ConfirmOrder = () => {
 
   const shippingCharges = subtotal > 1000 ? 0 : 200;
 
-  const tax = subtotal * 0.18;
+  const tax = Math.ceil(subtotal * 0.18);
+
 
   const totalPrice = subtotal + tax + shippingCharges;
 
@@ -86,15 +87,15 @@ const ConfirmOrder = () => {
             <Typography>Order Summery</Typography>
             <div>
               <div>
-                <p>Subtotal:</p>
+                <p>Subtotal :</p>
                 <span>₹{subtotal}</span>
               </div>
               <div>
-                <p>Shipping Charges:</p>
+                <p>Shipping Charges :</p>
                 <span>₹{shippingCharges}</span>
               </div>
               <div>
-                <p>GST:</p>
+                <p>GST (18%) :</p>
                 <span>₹{tax}</span>
               </div>
             </div>

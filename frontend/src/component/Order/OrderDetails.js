@@ -221,7 +221,7 @@ const OrderDetails = () => {
             </div>
 
             <div className="orderDetailsCartItems">
-              <Typography className="sectionTitle">Order Items:</Typography>
+              <Typography className="sectionTitle">Your Order Items:</Typography>
               <div className="orderDetailsCartItemsContainer">
                 {order.orderItems &&
                   order.orderItems.map((item) => (

@@ -1,4 +1,5 @@
-.banner {
+
+  .banner {
     background-image: url("../../images/cover.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -84,8 +85,9 @@
   } */
 
   .productCard {
+    min-height: 90%;
+    max-height: 510px;
     width: 20vmax;
-    height: 400px;
     display: flex;
     flex-direction: column;
     text-decoration: none;
@@ -112,9 +114,10 @@
   }
   
   .productCard > img{
-    height: 280px;
-    max-height: 280px;
+    min-height: 30% !important;
+    max-height: 350px !important;
     border-radius: 1rem;
+    margin-top: 10px;
   }
   
   .productCard > img {
@@ -123,6 +126,7 @@
   
   .productCard > div {
     margin: 0.5vmax;
+    /* min-height: 450px; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -173,8 +177,7 @@
     }
     
     .productCard > img {
-      width: 16vmax !important
-      ;
+      width: 16vmax !important;
     }
 
     .productCard > p {

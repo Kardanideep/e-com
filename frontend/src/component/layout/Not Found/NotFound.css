@@ -8,15 +8,20 @@
     justify-content: center;
     align-items: center;
   }
-  .PageNotFound > svg {
-    font-size: 7vmax;
-    color: tomato;
+
+  .not-found-img {
+    max-width: 550px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
   }
+
   .PageNotFound > p {
-    font-size: 2vmax;
+    font-size: 2.5vmax;
+    margin: 0 auto;
   }
   .PageNotFound > a {
-    background-color: rgb(51, 51, 51);
+    background-color: #3f51b5;
     color: white;
     border: none;
     padding: 1vmax 3vmax;
@@ -24,6 +29,11 @@
     font: 400 1vmax "Roboto";
     text-decoration: none;
     margin: 2vmax;
+    border-radius: 20px;
+  }
+
+  .PageNotFound > a:hover {
+    background-color: #7a82b3;
   }
   
   @media screen and (max-width: 600px) {

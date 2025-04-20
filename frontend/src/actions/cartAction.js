@@ -43,3 +43,8 @@ import {
   
     localStorage.setItem("shippingInfo", JSON.stringify(data));
   };
+
+  export const clearCart = () => (dispatch) => {
+    dispatch({ type: "CLEAR_CART" });
+  };
+  
