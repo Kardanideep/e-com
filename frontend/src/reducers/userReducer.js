@@ -5,7 +5,7 @@ import {
     REGISTER_USER_REQUEST,
     REGISTER_USER_SUCCESS,
     REGISTER_USER_FAIL,
-    LOAD_USER_REQUEST,
+    LOAD_USER_REQUEST, 
     LOAD_USER_SUCCESS,
     LOAD_USER_FAIL,
     LOGOUT_SUCCESS,
@@ -52,6 +52,11 @@ import {
           loading: true,
           isAuthenticated: false,
         };
+        case LOAD_USER_REQUEST:
+          return {
+            ...state,
+            loading: true,
+          };
       case LOGIN_SUCCESS:
       case REGISTER_USER_SUCCESS:
       case LOAD_USER_SUCCESS:

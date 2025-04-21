@@ -12,6 +12,33 @@
     text-align: center;
   }
 
+  .nofound{
+    font-size: 1.2rem;
+    color: #888;
+    font-weight: 500;
+    margin-top: 20%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .back-home-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #3f51b5;
+    color: white;
+    margin-left: -10px;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-home-link:hover {
+    background-color: #757f8a;
+  }
+  
+
   .main {
     margin-left: 130px !important;
   }

@@ -55,8 +55,7 @@ const Products = ({ match }) => {
     setCategory((prev) => (prev === item ? "" : item));
     setShowMobileFilters(false); // Optional: close on mobile
   };
-  
-  
+
   // const handlePriceClick = (range) => {
   //   setPrice(range);
   //   setShowMobileFilters(false);
@@ -68,8 +67,7 @@ const Products = ({ match }) => {
     );
     setShowMobileFilters(false);
   };
-  
-  
+
   // const handleRatingClick = (star) => {
   //   setRatings(star);
   //   setShowMobileFilters(false);
@@ -79,8 +77,7 @@ const Products = ({ match }) => {
     setRatings((prev) => (prev === star ? 0 : star));
     setShowMobileFilters(false);
   };
-  
-   
+
   const priceHandler = (event, newPrice) => {
     setPrice(newPrice);
   };
@@ -111,23 +108,32 @@ const Products = ({ match }) => {
             >
               Filters ☰
             </button>
-            
 
             <div className="main">
               <div className="products">
-                {products &&
+                {products && products.length > 0 ? (
                   products.map((product) => (
                     <ProductCard key={product._id} product={product} />
-                  ))}
+                  ))
+                ) : (
+                  <div className="nofound">
+                  <p >No products found.</p>
+                  <a href="/" className="back-home-link">Go to Home Page</a>
+                  </div>
+                 
+                )}
               </div>
             </div>
 
             <div className={`filterBox ${showMobileFilters ? "show" : "hide"}`}>
-            {showMobileFilters && (
-    <button className="closeMobileFilter" onClick={() => setShowMobileFilters(false)}>
-      ✖ Close
-    </button>
-  )}
+              {showMobileFilters && (
+                <button
+                  className="closeMobileFilter"
+                  onClick={() => setShowMobileFilters(false)}
+                >
+                  ✖ Close
+                </button>
+              )}
               <h2 className="name">Filters</h2>
               <hr></hr>
               <br></br>
@@ -140,7 +146,7 @@ const Products = ({ match }) => {
               min={0}
               max={500000}
             /> */}
-             
+
               {/* <Typography className="filterLabel"><h3> &#9673; Categories </h3></Typography> */}
               {/* <ul className="categoryBox">
                 {categories.map((category) => (
@@ -154,7 +160,7 @@ const Products = ({ match }) => {
                 ))}
               </ul> */}
 
-               <p className="title"> &#9673; Categories </p>
+              <p className="title"> &#9673; Categories </p>
               <ul className="categoryBox">
                 {categories.map((item, index) => (
                   <li
@@ -162,7 +168,7 @@ const Products = ({ match }) => {
                     className={`categoryItem ${
                       category === item ? "active" : ""
                     }`}
-                    onClick={() =>  handleCategoryClick(item)}
+                    onClick={() => handleCategoryClick(item)}
                   >
                     {item}
                   </li>

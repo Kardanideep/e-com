@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import "./Shipping.css";
-import { useSelector, useDispatch } from "react-redux";
+import {  useDispatch } from "react-redux";
 import { saveShippingInfo } from "../../actions/cartAction";
 import MetaData from "../layout/Metadata";
 import PinDropIcon from "@material-ui/icons/PinDrop";
@@ -18,14 +18,14 @@ const Shipping = () => {
   const history = useNavigate();
   const dispatch = useDispatch();
   const alert = useAlert();
-  const { shippingInfo } = useSelector((state) => state.cart);
+  // const { shippingInfo } = useSelector((state) => state.cart);
 
-  const [address, setAddress] = useState(shippingInfo.address);
-  const [city, setCity] = useState(shippingInfo.city);
-  const [state, setState] = useState(shippingInfo.state);
-  const [country, setCountry] = useState(shippingInfo.country);
-  const [pinCode, setPinCode] = useState(shippingInfo.pinCode);
-  const [phoneNo, setPhoneNo] = useState(shippingInfo.phoneNo);
+  const [address, setAddress] = useState();
+  const [city, setCity] = useState();
+  const [state, setState] = useState();
+  const [country, setCountry] = useState();
+  const [pinCode, setPinCode] = useState();
+  const [phoneNo, setPhoneNo] = useState();
 
   const shippingSubmit = (e) => {
     e.preventDefault();
@@ -142,7 +142,7 @@ const Shipping = () => {
               type="submit"
               value="Continue"
               className="shippingBtn"
-              disabled={state ? false : true}
+              // disabled={state ? false : true}
             />
           </form>
         </div>
