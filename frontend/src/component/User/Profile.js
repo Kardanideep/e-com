@@ -26,6 +26,7 @@ const Profile = () => {
   return (
     <Fragment>
       <MetaData title={`${user.name}'s Profile`} />
+      <h1 className="h1">{user.name}'s Account Details</h1>
       <div className="profileContainer">
         <div className="border1">
           <h1>My Profile</h1>
