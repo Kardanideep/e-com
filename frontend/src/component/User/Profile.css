@@ -357,8 +357,9 @@
     }
   
     .h1{
-      padding-top: 80px;
+      padding-top: 120px;
       margin: 0 10%;
+      font-size: 20px !important;
     }
 
     .border1 {
