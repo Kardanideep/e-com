@@ -1,5 +1,5 @@
 
-  .banner {
+  /* .banner {
     background-image: url("../../images/cover.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -12,15 +12,38 @@
     align-items: center;
     justify-content: center;
     color: rgb(233, 228, 228);
+  } */
+
+  .banner {
+    background-image: 
+      linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgb(232, 232, 232)),
+      url("../../images/cover.jpeg");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* object-fit: cover; */
+    background-color: rgb(232, 232, 232);
+    height: 100vmin;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: rgb(233, 228, 228);
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
   }
+  
+  
   
   .banner > h1 {
     margin: 5vmax;
-    font: 600 2.5vmax "Roboto";
+    font: 800 2.5vmax "Roboto";
   }
   
   .banner > p {
-    font: 300 1.4vmax "Lucida Sans";
+    font: 300 1.8vmax "Lucida Sans";
   }
   
   .banner > a > button {
@@ -39,7 +62,7 @@
     color: white;
   }
   
-  .banner::after {
+  /* .banner::after {
     content: "";
     width: 100vw;
     height: 70vmin;
@@ -49,7 +72,23 @@
     left: 0;
     clip-path: polygon(100% 68%, 0 100%, 100% 100%);
     max-width: 100%;
-  }
+  } */
+
+  /* .banner::after {
+    content: "";
+    width: 100vw;
+    height: 70vmin;
+    background-color: rgb(232, 232, 232);
+    position: absolute;
+    top: 0%;
+    left: 0;
+    clip-path: polygon(100% 68%, 0 100%, 100% 100%);
+    max-width: 100%;
+    z-index: 1;
+  } */
+  
+
+  
   
   .homeHeading {
     text-align: center;
@@ -58,13 +97,13 @@
     border-bottom: 1px solid rgba(21, 21, 21, 0.5);
     width: 20vmax;
     padding: 1vmax;
-    margin: 2vmax auto;
+    margin: -8vmax  auto 11vmax auto;
     color: rgb(0, 0, 0, 0.7);
   }
   
   .container {
     display: flex;
-    margin: 2vmax auto;
+    margin: -8vmax  auto 2vmax auto;
     width: 90vw;
     flex-wrap: wrap;
     justify-content: center;
@@ -163,6 +202,22 @@
   } */
   
   @media screen and (max-width: 600px) {
+
+    .banner > h1 {
+      margin: 5vmax;
+      font: 800 2.5vmax "Roboto";
+      color: #11263c;
+    }
+    
+    .banner > p {
+      color: #ffffff;
+      background-color: hsla(0, 0%, 48%, 0.54);
+      border-radius: 2px;
+      font: 500 2.5vmax "Lucida Sans";
+    }
+    
+ 
+    
    
     .productCard {
       width: 18vmax !important;

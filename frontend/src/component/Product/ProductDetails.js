@@ -28,7 +28,7 @@ const ProductDetails = ({ match }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
 
-  const [selectedImg, setSelectedImg] = useState(null);
+  const [zoom, setZoom] = useState(null);
 
   const { product, loading, error } = useSelector(
     (state) => state.productDetails
@@ -37,6 +37,9 @@ const ProductDetails = ({ match }) => {
   const { success, error: reviewError } = useSelector(
     (state) => state.newReview
   );
+
+  //img 
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const options = {
     size: "large",
@@ -123,7 +126,7 @@ const ProductDetails = ({ match }) => {
                     />
                   ))}
               </Carousel> */}
-              <Carousel className="img">
+              {/* <Carousel className="img">
                 {product.images &&
                   product.images.map((item, i) => (
                     <img
@@ -157,6 +160,93 @@ const ProductDetails = ({ match }) => {
                 >
                   <img
                     src={selectedImg}
+                    alt="Zoomed"
+                    style={{
+                      maxWidth: "90%",
+                      maxHeight: "90%",
+                      borderRadius: "8px",
+                    }}
+                  /> */}
+              {/* </div> */}
+              {/* )} */}
+              {/* Main Carousel */}
+                {/* Main Carousel (controlled by selectedIndex) */}
+         {/* ✅ Carousel with controlled active slide */}
+           {/* Main Carousel (controlled by selectedIndex) */}
+      <Carousel
+        index={selectedIndex} // This will control the active slide
+        onChange={(index) => setSelectedIndex(index)} // Updates the selected image
+        indicators={false} // Remove default indicators
+        navButtonsAlwaysVisible={true} // Show arrows always
+        className="img"
+      >
+        {product.images?.map((item, i) => (
+          <div key={i}>
+            <img
+              src={item.url}
+              alt={`Slide ${i}`}
+              onClick={() => setZoom(item.url)}
+              style={{
+                maxHeight: "500px",
+                objectFit: "contain",
+                borderRadius: "10px",
+                width: "100%",
+              }}
+            />
+          </div>
+        ))}
+      </Carousel>
+
+      {/* Thumbnails below the carousel */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          gap: "10px",
+          marginTop: "10px",
+          flexWrap: "wrap",
+        }}
+      >
+        {product.images?.map((item, i) => (
+          <img
+            key={i}
+            src={item.url}
+            alt={`Thumbnail ${i}`}
+            onClick={() => setSelectedIndex(i)} // Update the main image on thumbnail click
+            style={{
+              width: "60px",
+              height: "60px",
+              objectFit: "cover",
+              borderRadius: "5px",
+              cursor: "pointer",
+              border: selectedIndex === i ? "2px solid #000" : "1px solid #ccc",
+              boxShadow: selectedIndex === i ? "0 0 5px #000" : "none",
+            }}
+          />
+        ))}
+      </div>
+
+              {/* Zoomed image overlay */}
+              {zoom && (
+                <div
+                  className="overlay"
+                  onClick={() => setZoom(null)} // ⬅️ Close overlay on click
+                  style={{
+                    position: "fixed",
+                    top: 0,
+                    left: 0,
+                    width: "100vw",
+                    height: "100vh",
+                    backgroundColor: "rgba(0,0,0,0.8)",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    zIndex: 1000,
+                    cursor: "zoom-out",
+                  }}
+                >
+                  <img
+                    src={zoom}
                     alt="Zoomed"
                     style={{
                       maxWidth: "90%",
