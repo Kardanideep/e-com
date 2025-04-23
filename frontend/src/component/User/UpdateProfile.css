@@ -14,7 +14,7 @@
   .updateProfileBox {
     background-color: white;
     width: 25vw;
-    height: 70vh;
+    height: 80vh;
     box-sizing: border-box;
     overflow: hidden;
     border-radius: 20px;
@@ -111,6 +111,41 @@
   .updateProfileBtn:hover {
     background-color: rgb(81, 81, 80);
   }
+
+  .removeProfileBtn {
+    display:flex;
+    text-align: center;
+    border: none;
+    background-color: #d04141;
+    color: white;
+    font: 300 0.9vmax "Roboto";
+    padding: 0.5vmax;
+    margin: -5% 0 20px -45%;
+    cursor: pointer;
+    transition: all 0.5s;
+    border-radius: 10px;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+  }
+
+  .p1{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: -10px 0 10px 0;
+    padding: 3px 0;
+    background-color: #d041416c;
+  }
+  .img1{
+    height: 20px;
+    width: 20px;
+    margin-right: 2px;
+  }
+  
+  .removeProfileBtn:hover {
+    background-color: rgb(81, 81, 80);
+  }
   
   @media screen and (max-width: 600px) {
     .updateProfileContainer {
@@ -118,13 +153,23 @@
     }
     .updateProfileBox {
       width: 80vw;
-      height: 60vh;
+      height: 75vh;
       padding-top: 10px;
     }
   
     .updateProfileForm {
       padding: 5vmax;
     }
+
+    .removeProfileBtn {
+      font: 300 1.5vmax "Roboto";
+      margin: -5% 0 0 -45%;
+    }
+  
+    .p1{
+      font-size: 0.8rem;
+    }
+
   
     .updateProfileForm > div > input {
       padding: 2.5vmax 5vmax;

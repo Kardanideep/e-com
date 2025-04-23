@@ -18,12 +18,12 @@
     background-image: 
       linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgb(232, 232, 232)),
       url("../../images/cover.jpeg");
-    background-position: right;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     /* object-fit: cover; */
     background-color: rgb(232, 232, 232);
-    height: 100vmin;
+    height: 80vmin;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -40,10 +40,12 @@
   .banner > h1 {
     margin: 5vmax;
     font: 800 2.5vmax "Roboto";
+    color: #000000;
   }
   
   .banner > p {
     font: 300 1.8vmax "Lucida Sans";
+    color: #000000;
   }
   
   .banner > a > button {
@@ -202,6 +204,11 @@
   } */
   
   @media screen and (max-width: 600px) {
+    .banner{
+      background-image: 
+      linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgb(232, 232, 232)),
+      url("../../images/cover.png");
+    }
 
     .banner > h1 {
       margin: 5vmax;
@@ -210,13 +217,16 @@
     }
     
     .banner > p {
-      color: #ffffff;
-      background-color: hsla(0, 0%, 48%, 0.54);
+      color: #000000;
+      margin-top: 45px;
+      /* background-color: hsla(0, 0%, 48%, 0.54); */
       border-radius: 2px;
       font: 500 2.5vmax "Lucida Sans";
     }
     
- 
+   .homeHeading{
+    margin: -4vmax  auto 11vmax auto;
+   }
     
    
     .productCard {

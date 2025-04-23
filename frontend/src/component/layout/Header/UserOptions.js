@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect} from "react";
 import "./Header.css";
 import { SpeedDial, SpeedDialAction } from "@material-ui/lab";
 import Backdrop from "@material-ui/core/Backdrop";
@@ -44,19 +44,24 @@ const UserOptions = ({ user }) => {
   }
 
   function dashboard() {
+    setOpen(false);
     history("/admin/dashboard");
   }
 
   function orders() {
+    setOpen(false);
     history("/orders");
   }
   function account() {
+    setOpen(false);
     history("/account");
   }
   function cart() {
+    setOpen(false);
     history("/cart");
   }
   function logoutUser() {
+    setOpen(false);
     dispatch(logout());
     alert.success("Logout Successfully");
   }
