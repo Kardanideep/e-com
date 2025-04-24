@@ -101,6 +101,17 @@
   margin-top: 1rem;
 }
 
+.view{
+  color: #12193c !important;
+  background-color: #cecece !important;
+  margin-bottom: 15px !important;
+  cursor: pointer;
+}
+
+.view:hover{
+  background-color: #747474 !important;
+}
+
 /* For Chrome, Safari, Opera */
 .productGrida::-webkit-scrollbar {
   display: none;
@@ -117,7 +128,7 @@
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  min-height: 600px !important;
+  min-height: 450px !important;
   /* width: 250px !important; */
   margin: 20px;
   overflow: hidden;
@@ -170,13 +181,14 @@
    width: 70%;
   }
 
+
   .productCardFootera {
     padding: 0rem;
     width: 90%;
   }
 
   .productCarda {
-    min-height: 250px !important;
+    min-height: 300px !important;
     width: 150px !important;
   }
 

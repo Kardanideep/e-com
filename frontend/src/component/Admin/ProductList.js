@@ -144,7 +144,7 @@
 
 // export default ProductList;
 
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import "./productList.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -161,8 +161,14 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import SideBar from "./Sidebar";
 import { DELETE_PRODUCT_RESET } from "../../constants/productConstants";
 import { useNavigate } from "react-router-dom";
+import Modal from "./Modal"; // We'll define this below
+
+
 
 const ProductList = () => {
+
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
   const history = useNavigate();  
   const dispatch = useDispatch();
 
@@ -207,7 +213,7 @@ const ProductList = () => {
         <div className="productListContainera">
           <h1 id="productListHeadinga">ALL PRODUCTS</h1>
 
-          <div className="productGrida">
+          {/* <div className="productGrida">
             {products && products.map((item) => (
               <div key={item._id} className="productCarda">
                 <div className="productCardHeadera">
@@ -234,7 +240,54 @@ const ProductList = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
+          <div className="productGrida">
+  {products && products.map((item) => (
+    <div
+      key={item._id}
+      className="productCarda"
+
+    >
+      <div className="productCardHeadera">
+      <h2>{item.name.length > 25 ? item.name.slice(0, 25) + "..." : item.name}</h2>
+
+      </div>
+      <div className="productCardBodya">
+        <p className="des"><strong>ID :</strong> {item._id}</p>
+        <p><strong>Price :</strong> ₹{item.price}</p>
+        <p><strong>Stock :</strong> {item.stock}</p>
+      </div>
+      <Button
+          onClick={() => setSelectedProduct(item)}
+          // color="secondary"
+          className="view"
+        >
+          View Details
+        </Button>
+      <div className="productCardFootera">
+      <Link to={`/admin/product/${item._id}`}>
+                    <Button>
+                      <EditIcon />
+                    </Button>
+                  </Link>
+        <Button
+          onClick={(e) => {
+            e.stopPropagation(); // stop modal from opening
+            deleteProductHandler(item._id);
+          }}
+          color="secondary"
+        >
+          <DeleteIcon />
+        </Button>
+      </div>
+    </div>
+  ))}
+</div>
+
+{selectedProduct && (
+  <Modal onClose={() => setSelectedProduct(null)} product={selectedProduct} />
+)}
+
         </div>
       </div>
     </Fragment>

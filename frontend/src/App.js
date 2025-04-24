@@ -147,6 +147,7 @@ function App() {
       
       <Routes>
         {/* Public Routes */}
+
         <Route path="/" element={<Home />} />
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/products" element={<Products />} />
