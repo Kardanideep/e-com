@@ -9,6 +9,7 @@ import { useAlert } from "react-alert";
 import { UPDATE_PROFILE_RESET } from "../../constants/userConstants";
 import MetaData from "../layout/Metadata";
 import { useNavigate } from "react-router-dom";
+import profile from "./Profile.png";
 
 const UpdateProfile = () => {
   const history = useNavigate();  
@@ -141,7 +142,7 @@ const UpdateProfile = () => {
                   className="updateProfileBtn"
                 />
               </form>
-              <p className="p1"><img className="img1" src="/profile.png"></img> Default profile image is not removable. </p>
+              <p className="p1"><img className="img1" src={profile}></img> Default profile image is not removable. </p>
             </div>
           </div>
         </Fragment>

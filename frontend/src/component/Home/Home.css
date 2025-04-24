@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    align-items: center;
+    align-items: center;  
     justify-content: center;
     color: rgb(233, 228, 228);
   } */
@@ -17,7 +17,7 @@
   .banner {
     background-image: 
       linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgb(232, 232, 232)),
-      url("../../images/cover.jpeg");
+      url("../../images/cover1.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
