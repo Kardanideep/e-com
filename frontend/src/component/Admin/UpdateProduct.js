@@ -178,6 +178,7 @@ const UpdateProduct = ({ match }) => {
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
+                required
               >
                 <option value="">Choose Category</option>
                 {categories.map((cate) => (
@@ -203,9 +204,10 @@ const UpdateProduct = ({ match }) => {
               <input
                 type="file"
                 name="avatar"
-                accept="image/*"
+                accept="image/png"
                 onChange={updateProductImagesChange}
                 multiple
+                required
               />
             </div>
 
