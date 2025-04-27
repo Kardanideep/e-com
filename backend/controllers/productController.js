@@ -6,8 +6,11 @@ const cloudinary = require("cloudinary");
 
 // create products - admin
 exports.createProduct = catchAsyncError(async (req,res)=>{
+  // console.log(req.body)
 
-  let images = [];
+  let images = []
+  
+
 
   if (typeof req.body.images === "string") {
     images.push(req.body.images);
@@ -17,23 +20,51 @@ exports.createProduct = catchAsyncError(async (req,res)=>{
 
   const imagesLinks = [];
 
-  for (let i = 0; i < images.length; i++) {
-    const result = await cloudinary.v2.uploader.upload(images[i], {
-      folder: "products",
-    });
+  // for (let i = 0; i < images.length; i++) {
+  //   const base64Data = images[i].replace(/^data:image\/\w+;base64,/, "");
+  //   // console.log(base64Data)
+  //   // console.log("Uploading Image:", images[i]); // Check what you are uploading
 
-    imagesLinks.push({
-      public_id: result.public_id,
-      url: result.secure_url,
-    });
+  //   const result = await cloudinary.v2.uploader.upload(base64Data, {
+  //     folder: "products",
+  //     // resource_type: "auto",  // This handles images of all types
+  //   });
+
+  //   imagesLinks.push({
+  //     public_id: result.public_id,
+  //     url: result.secure_url,
+  //   });
+  // }
+
+  for (let i = 0; i < images.length; i++) {
+    try {
+      // Strip the base64 prefix: 'data:image/png;base64,' (if present)
+      const base64Data = images[i].replace(/^data:image\/\w+;base64,/, "");
+
+      const uploadImg = `data:image/jpeg;base64,${base64Data}`;
+      
+      const result = await cloudinary.v2.uploader.upload(uploadImg, {
+        folder: "products",
+        resource_type: "auto",  // This auto-detects the file type (image, video, etc.)
+      });
+
+      // Store image information (public_id, URL)
+      imagesLinks.push({
+        public_id: result.public_id,
+        url: result.secure_url,
+      });
+    } catch (error) {
+      console.error("Error uploading image:");
+      return res.status(500).json({ success: false, message: "Error uploading image" });
+    }
   }
 
   req.body.images = imagesLinks;
   req.body.user = req.user.id;
 
-  console.log(images)
-  console.log(imagesLinks)
-  console.log(req.body)
+  // console.log(images)
+  // console.log(imagesLinks)
+  // console.log(req.body)
 
   const product = await Product.create(req.body);
     
@@ -111,7 +142,11 @@ exports.updateProduct = catchAsyncError(async (req,res,next)=>{
     const imagesLinks = [];
 
     for (let i = 0; i < images.length; i++) {
-      const result = await cloudinary.v2.uploader.upload(images[i], {
+      const base64Data = images[i].replace(/^data:image\/\w+;base64,/, "");
+
+      const uploadImg = `data:image/jpeg;base64,${base64Data}`;
+
+      const result = await cloudinary.v2.uploader.upload(uploadImg, {
         folder: "products",
       });
 

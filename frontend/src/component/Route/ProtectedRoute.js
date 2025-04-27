@@ -42,7 +42,7 @@ import Loader from "../layout/Loader/Loader" // Your custom loader component
 const ProtectedRoute = ({ isAdmin, children }) => {
   const { loading, isAuthenticated, user } = useSelector((state) => state.user);
   const [isAuthChecked, setIsAuthChecked] = useState(false);
-  console.log(loading, isAuthenticated, user )
+  // console.log(loading, isAuthenticated, user )
   
 
   useEffect(() => {
@@ -53,18 +53,18 @@ const ProtectedRoute = ({ isAdmin, children }) => {
 
   // If still loading or auth check not complete, show loader
   if (loading || !isAuthChecked) {
-    console.log("waiitttt")
+    // console.log("waiitttt")
     return <Loader />;
   }
 
   // After auth check is complete, proceed with redirection logic
   if (!isAuthenticated) {
-    console.log('/login')
+    // console.log('/login')
     return <Navigate to="/login" replace />;
   }
 
   if (isAdmin && user?.role !== "admin") {
-    console.log('/account')
+    // console.log('/account')
     return <Navigate to="/notFount" replace />;
   }
 

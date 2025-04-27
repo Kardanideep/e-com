@@ -21,13 +21,15 @@ const NewProduct = () => {
 
   const { loading, error, success } = useSelector((state) => state.newProduct);
 
-  const [name, setName] = useState("");
-  const [price, setPrice] = useState(0);
-  const [description, setDescription] = useState("");
-  const [category, setCategory] = useState("");
+  const [name, setName] = useState();
+  const [price, setPrice] = useState();
+  const [description, setDescription] = useState();
+  const [category, setCategory] = useState();
   const [Stock, setStock] = useState(0);
   const [images, setImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
+
+  
 
   const categories = [
     "Laptop",
@@ -41,12 +43,14 @@ const NewProduct = () => {
 
   useEffect(() => {
     if (error) {
+      // console.log(error)
       alert.error(error);
       dispatch(clearErrors());
     }
 
     if (success) {
       alert.success("Product Created Successfully");
+      // console.log("done")
       history("/admin/dashboard");
       dispatch({ type: NEW_PRODUCT_RESET });
     }
@@ -56,20 +60,27 @@ const NewProduct = () => {
     e.preventDefault();
 
     const myForm = new FormData();
+    // console.log("formdata",myForm)
+    // console.log(myForm.getAll('images'));
+
 
     myForm.set("name", name);
     myForm.set("price", price);
     myForm.set("description", description);
     myForm.set("category", category);
     myForm.set("stock", Stock);
-
     images.forEach((image) => {
       myForm.append("images", image);
     });
+
+    // console.log(images)
+ 
+
     dispatch(createProduct(myForm));
   };
 
   const createProductImagesChange = (e) => {
+    // console.log("done")
     const files = Array.from(e.target.files);
 
     setImages([]);
@@ -136,8 +147,8 @@ const NewProduct = () => {
 
             <div>
               <AccountTreeIcon />
-              <select onChange={(e) => setCategory(e.target.value)}>
-                <option value="">Choose Category</option>
+              <select onChange={(e) => setCategory(e.target.value)} required>
+                <option value="" >Choose Category</option>
                 {categories.map((cate) => (
                   <option key={cate} value={cate}>
                     {cate}
@@ -160,9 +171,10 @@ const NewProduct = () => {
               <input
                 type="file"
                 name="avatar"
-                accept="image/*"
+                accept="image/png"
                 onChange={createProductImagesChange}
                 multiple
+                required
               />
             </div>
 
