@@ -207,7 +207,6 @@ const UpdateProduct = ({ match }) => {
                 accept="image/png"
                 onChange={updateProductImagesChange}
                 multiple
-                required
               />
             </div>
 

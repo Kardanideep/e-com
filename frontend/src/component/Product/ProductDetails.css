@@ -379,6 +379,8 @@
     padding: 0;
     background: #f6f6f6;
   }
+
+ 
   
   .ProductDetails {
     display: flex;
@@ -524,6 +526,7 @@
   .detailsBlock-4 p {
     font-size: 1rem;
     color: var(--text-light);
+    white-space: pre-wrap;
   }
   
   .submitReview {
